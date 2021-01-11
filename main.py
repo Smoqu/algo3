@@ -13,15 +13,19 @@
 #2
 def insertion_sort(seq: list) -> list:
 
-
+    index = -1
     for x in range(len(seq) - 1):
-        print(seq[x])
+        print(seq)
 
 
-        y = x - 1
-        while seq[x] <= seq[y] and len(seq) <= y:
-            seq[y + 1], seq[y] = seq[y], seq[y +1 ]
+        y = x -1
+        while seq[x] <= seq[y] and y >= 0:
+            seq[y], seq[y + 1] = seq[y + 1], seq[y]                
+            index = y
             y -= 1
+        
+        if index >= 0:
+            seq[index], seq[x] = seq[x], seq[index]
         
 
     print(seq)
